@@ -1,21 +1,41 @@
-## Laravel PHP Framework
+## Example Laravel4 REST backend
 
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/version.png)](https://packagist.org/packages/laravel/framework) [![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.png)](https://packagist.org/packages/laravel/framework) [![Build Status](https://travis-ci.org/laravel/framework.png)](https://travis-ci.org/laravel/framework)
+Little example application to test and learn about Laravel4 PHP framework. Including testing, routing, filters, db migration and seed.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, and caching.
+## Develop
 
-Laravel aims to make the development process a pleasing one for the developer without sacrificing application functionality. Happy developers make the best code. To this end, we've attempted to combine the very best of what we have seen in other web frameworks, including frameworks implemented in other languages, such as Ruby on Rails, ASP.NET MVC, and Sinatra.
+    Waking up the app:
 
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+        git clone
+        php artisan migrate
+        php artisan db:seed
+        php artisan serve
 
-## Official Documentation
+    Testing up if it's working:
+    - List tasks
 
-Documentation for the entire framework can be found on the [Laravel website](http://laravel.com/docs).
+            ``curl -i --user test\@example.com:test localhost:8000/api/v1/task``
 
-### Contributing To Laravel
+    - Create a task
 
-**All issues and pull requests should be filed on the [laravel/framework](http://github.com/laravel/framework) repository.**
+            ``curl -i -X POST -F 'title=Testing' --user test\@example.com:test localhost:8000/api/v1/task``
 
-### License
+    - Removing a task
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+            ``curl -i -X DELETE --user test\@example.com:test localhost:8000/api/v1/task``
+
+## Testing
+
+        ``phpunit`` should do the trick. Testing is configured to use and in-memory SQLi db.
+
+## Feedback
+
+If you'd like to contribute to the project or file a bug or feature request, please visit [the project page][1].
+
+## License
+
+The project is licensed under the [GNU GPL v3][2] ([tldr][3]) license. Which means you're allowed to copy, edit, change, hack, use all or any part of this project *as long* as all of the changes and contributions remains under the same terms and conditions.
+
+  [1]: https://github.com/desyncr/laravel4rest/
+  [2]: http://www.gnu.org/licenses/gpl.html
+  [3]: http://www.tldrlegal.com/license/gnu-general-public-license-v3-(gpl-3)
