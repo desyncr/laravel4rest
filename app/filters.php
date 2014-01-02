@@ -13,6 +13,11 @@
 
 App::before(function($request)
 {
+    // Testing
+    if (!isset($_SERVER['REQUEST_METHOD'])) {
+        return;
+    }
+
     if($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
         $statusCode = 204;
 
