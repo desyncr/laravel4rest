@@ -4,29 +4,27 @@ Little example application to test and learn about Laravel4 PHP framework. Inclu
 
 ## Develop
 
-    Waking up the app:
+Waking up the app:
 
-        git clone
-        php artisan migrate
-        php artisan db:seed
-        php artisan serve
+    php artisan migrate
+    php artisan db:seed
+    php artisan serve
 
-    Testing up if it's working:
-    - List tasks
+Testing up if it's working:
 
-            ``curl -i --user test\@example.com:test localhost:8000/api/v1/task``
+    # List tasks
+    curl -i --user test\@example.com:test localhost:8000/api/v1/task
 
-    - Create a task
+    # Create a task
+    curl -i -X POST -F 'title=Testing' --user test\@example.com:test localhost:8000/api/v1/task
 
-            ``curl -i -X POST -F 'title=Testing' --user test\@example.com:test localhost:8000/api/v1/task``
+    # Removing a task
+    curl -i -X DELETE --user test\@example.com:test localhost:8000/api/v1/task
 
-    - Removing a task
-
-            ``curl -i -X DELETE --user test\@example.com:test localhost:8000/api/v1/task``
 
 ## Testing
 
-        ``phpunit`` should do the trick. Testing is configured to use and in-memory SQLi db.
+``phpunit`` should do the trick. Testing is configured to use and in-memory SQLi db.
 
 ## Feedback
 
