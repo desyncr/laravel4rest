@@ -30,7 +30,7 @@ Testing up if it's working:
 
 ## Testing
 
-``phpunit`` should do the trick. Testing is configured to use and in-memory SQLi db.
+``phpunit`` should do the trick. Testing is configured to use an in-memory SQLite db.
 
 ## Feedback
 
