@@ -2,12 +2,18 @@
 
 Little example application to test and learn about Laravel4 PHP framework. Including testing, routing, filters, db migration and seed.
 
+## Install
+    
+    git clone
+    composer install -vvv
+    php artisan migrate
+    php artisan db:seed
+
+
 ## Develop
 
 Waking up the app:
 
-    php artisan migrate
-    php artisan db:seed
     php artisan serve
 
 Testing up if it's working:
